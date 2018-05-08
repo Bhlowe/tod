@@ -38,7 +38,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.InsnList;
 import org.objectweb.asm.tree.MethodNode;
 
-import com.sun.org.apache.bcel.internal.generic.ICONST;
+// import com.sun.org.apache.bcel.internal.generic.ICONST;
 
 /**
  * Helper class that permits to write prettier code.

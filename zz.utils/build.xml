@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="zz.utils" default="jar" basedir="." >
+	
+	<property environment="env"/>
+	
+		
+	<target name="init">
+		<property name="path.src.java" location="${basedir}/src"/>
+		
+		<property name="path.build" location="${basedir}/build"/>
+		<property name="path.classes" location="${basedir}/classes"/>
+		<property name="path.javadoc" location="${basedir}/doc"/>
+		
+		<property name="file.jar" location="${path.build}/zz.utils.jar"/>
+		
+		<property name="encoding" value="UTF-8"/>
+
+		<echo message="Base dir: ${basedir}" />
+	</target>	
+		
+	<target name="clean" depends="init">
+		<echo message="Cleaning everything."/>
+		<delete failonerror="false">
+			<fileset dir="${path.classes}"/>
+			<fileset dir="${path.build}"/>
+			<fileset dir="${path.javadoc}"/>
+		</delete>
+	</target>
+	
+	<target name="compile" depends="init">
+		<mkdir dir="${path.classes}"/>
+		<javac compiler="javac1.5" source="1.5" target="1.5" 
+			srcdir="${path.src.java}"
+			nowarn="true"
+			destdir="${path.classes}"
+			encoding="${encoding}"
+			debug="true"
+	      	deprecation="on">
+			
+		</javac>
+	</target>
+	
+	<target name="jar" depends="init, compile">
+		
+		<mkdir dir="${path.build}"/>
+		<echo message="zz.utils: creating jar ${file.jar}"/>
+		<jar jarfile="${file.jar}" index="true">
+			<fileset dir="${path.classes}" />
+		</jar>
+		
+	</target>
+	
+	
+	<target name="jdoc" depends="init">
+		
+		<echo message="Creating JavaDoc"/>
+		<mkdir dir="${path.javadoc}"/>
+		
+		<javadoc
+			packagenames="*"
+			sourcepath="${path.src.java}"
+			destdir="${path.javadoc}"
+			source="1.5"
+			verbose="no"/>
+		
+	</target>
+	
+</project>

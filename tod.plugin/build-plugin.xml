@@ -20,8 +20,8 @@
 		<property name="tod-dbgrid.dir" value="${basedir}/../dbgrid"/>
 		<property name="tod-evdb1.dir" value="${basedir}/../evdb1"/>
 		<property name="tod-evdbng.dir" value="${basedir}/../evdbng"/>
-		<property name="zz.utils.dir" value="${basedir}/../../zz.utils"/>
-		<property name="zz.eclipse.utils.dir" value="${basedir}/../../zz.eclipse.utils"/>
+		<property name="zz.utils.dir" value="${basedir}/../zz.utils"/>
+		<property name="zz.eclipse.utils.dir" value="${basedir}/../zz.eclipse.utils"/>
 		<property name="zz.jinterp.dir" value="${basedir}/../../zz.jinterp"/>
 
 		<path id="default.classpath">
