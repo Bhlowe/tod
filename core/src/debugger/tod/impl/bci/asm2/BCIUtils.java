@@ -463,14 +463,14 @@ public class BCIUtils implements Opcodes
 		{
 			Frame[] theFrames = theAnalyzer.getFrames();
 			printFrames(aNode, theFrames);
-			
+			AbstractInsnNode[] nodes = null;	// TODO: BHL FIX: e.node;
 			Utils.rtex(
 					e,
 					"Error in %s.%s%s at instructions #(%s): %s",
 					aClassNode.name,
 					aNode.name,
 					aNode.desc,
-					e.nodes != null ? getBytecodeRanks(aNode, e.nodes) : "?",
+					nodes != null ? getBytecodeRanks(aNode, nodes) : "?",
 					e.getMessage());
 		}
 		catch (Exception e)

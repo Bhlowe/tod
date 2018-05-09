@@ -99,7 +99,7 @@ public class ListInspector extends IteratorStructureInspector<ListInspector.Item
 
 
 
-	private class ItemInfo implements IObjectInspector.IEntryInfo
+	protected class ItemInfo implements IObjectInspector.IEntryInfo
 	{
 		private final int itsIndex;
 		private final JInstance itsItem;

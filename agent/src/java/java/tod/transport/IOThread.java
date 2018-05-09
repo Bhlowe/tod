@@ -22,9 +22,7 @@ RSA Data Security, Inc. MD5 Message-Digest Algorithm".
 */
 package java.tod.transport;
 
-import java.lang.ref.WeakReference;
 import java.nio.channels.ByteChannel;
-import java.tod.AgentReady;
 import java.tod.TOD;
 import java.tod.ThreadData;
 import java.tod.io._EOFException;
@@ -35,11 +33,13 @@ import java.tod.util._ArrayList;
 import java.tod.util._StringBuilder;
 import java.tod.util._SyncRingBuffer;
 
+import tod.impl.server.PacketBuffer;
 import tod2.access.TODAccessor;
 import tod2.agent.AgentDebugFlags;
 import tod2.agent.Command;
 import tod2.agent.Message;
 import tod2.agent.io._ByteBuffer;
+
 
 /**
  * This class implements the thread that communicates with the TOD database.
@@ -63,6 +63,7 @@ public class IOThread extends Thread
 	/**
 	 * Used to send the header of each packet.
 	 */
+	// private final IOThread itsHeaderBuffer;
 	private final _ByteBuffer itsHeaderBuffer;
 	
 	/**

@@ -9,7 +9,10 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
 
-import tod.core.bci.NativeAgentPeer;
+import tod.impl.server.NativeAgentPeer;
+import tod2.agent.AgentConfig;
+
+//import tod.core.bci.NativeAgentPeer;
 
 /**
  * Manages the connection between the database and the agent
@@ -80,7 +83,7 @@ public class ConnectionManager
 					itsConfig.logf(1, "Host bits: %d", itsConfig.getHostBits());
 					break;
 
-				case NativeAgentPeer.SET_WORKING_SET:
+					case NativeAgentPeer.SET_WORKING_SET:
 					if (itsConfig.getWorkingSet()!=null)
 						in.readUTF();
 					else itsConfig.setWorkingSet(in.readUTF());

@@ -325,6 +325,7 @@ public class ObjectInspector implements IObjectInspector
 		if (itsReferenceEvent instanceof IFieldWriteEvent)
 		{
 			IFieldWriteEvent theEvent = (IFieldWriteEvent) itsReferenceEvent;
+			// BHL Unlikely equals compare.
 			if (theEvent.getField().equals(aEntry))
 			{
 				theResult.add(new EntryValue(theEvent.getValue(), theEvent));

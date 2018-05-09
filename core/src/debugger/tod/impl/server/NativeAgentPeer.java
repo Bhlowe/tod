@@ -40,6 +40,7 @@ import tod.core.bci.IInstrumenter.InstrumentedClass;
 import tod.core.config.TODConfig;
 import tod.core.server.TODServer;
 import tod2.agent.AgentConfig;
+// import tod2.agent.AgentConfig;
 
 
 /**
@@ -60,6 +61,14 @@ public abstract class NativeAgentPeer extends SocketThread
 	public static final byte SET_CACHE_PATH = 85;
 
 	public static final byte CONFIG_DONE = 99;
+	
+	// BHL FIX
+	public static final int SET_SKIP_CORE_CLASSES = 86;
+	public static final int SET_STRUCTDB_ID = 87;
+	public static final int SET_WORKING_SET = 88;
+	
+	
+	
 	
 	private final TODConfig itsConfig;
 	
